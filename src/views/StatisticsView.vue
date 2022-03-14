@@ -1,14 +1,13 @@
 <template>
   <div>
     统计
-    <hr />
-    <NavName />
+    <MainNav />
   </div>
 </template>
 
 <script>
 export default {
-  name: "StatisticsName",
+  name: "StatisticsView",
 };
 </script>
 

@@ -1,13 +1,12 @@
 <template>
   <div>
     标签
-    <hr />
-    <NavName />
+    <MainNav />
   </div>
 </template>
 
 <script>
 export default {
-  name: "LabelName",
+  name: "LabelView",
 };
 </script>

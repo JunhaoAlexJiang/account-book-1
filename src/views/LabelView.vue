@@ -1,9 +1,13 @@
 <template>
-  <div>标签</div>
+  <div>
+    标签
+    <hr />
+    <NavName />
+  </div>
 </template>
 
 <script>
-export default {};
+export default {
+  name: "LabelName",
+};
 </script>
-
-<style lang="scss" scoped></style>

@@ -2,13 +2,13 @@
   <div>
     记账
     <hr />
-    <Nav />
+    <NavName />
   </div>
 </template>
 
 <script lang="ts">
 export default {
-  name: "money",
+  name: "MoneyName",
 };
 </script>
 

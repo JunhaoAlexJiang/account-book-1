@@ -6,7 +6,7 @@ import store from "./store";
 import Nav from "@/components/Nav-1.vue";
 
 Vue.config.productionTip = false;
-Vue.component("Nav", Nav);
+Vue.component("NavName", Nav);
 
 new Vue({
   router,

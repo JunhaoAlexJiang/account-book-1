@@ -1,11 +1,8 @@
 <template>
-  <div>
-    标签
-    <MainNav />
-  </div>
+  <NavLayoutStyle>标签</NavLayoutStyle>
 </template>
 
-<script>
+<script lang="ts">
 export default {
   name: "LabelView",
 };

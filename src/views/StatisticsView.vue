@@ -1,11 +1,8 @@
 <template>
-  <div>
-    统计
-    <MainNav />
-  </div>
+  <NavLayoutStyle>统计</NavLayoutStyle>
 </template>
 
-<script>
+<script lang="ts">
 export default {
   name: "StatisticsView",
 };

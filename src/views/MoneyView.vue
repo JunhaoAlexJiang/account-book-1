@@ -1,12 +1,8 @@
 <template>
-  <div class="money">
-    <NavLayoutStyle> 记账 </NavLayoutStyle>
-  </div>
+  <NavLayoutStyle> 记账 </NavLayoutStyle>
 </template>
 
 <script lang="ts">
-import x from "@/assets/icon/svg/money.svg";
-console.log(x);
 export default {
   name: "MoneyView",
 };

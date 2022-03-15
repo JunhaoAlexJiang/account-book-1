@@ -1,39 +1,18 @@
 <template>
-  <svg :class="svgClass" aria-hidden="true" v-on="$listeners">
-    <use :xlink:href="iconName" />
+  <svg class="svg-icon">
+    <use :xlink:href="'#' + name" />
   </svg>
 </template>
 
 <script lang="ts">
 export default {
   name: "SvgIcon",
-  props: {
-    name: {
-      type: String,
-      required: true,
-    },
-    className: {
-      type: String,
-      default: "",
-    },
-  },
-  computed: {
-    iconName() {
-      return `#${this.name}`;
-    },
-    svgClass() {
-      if (this.className) {
-        return "scoped-svg-icon " + this.className;
-      } else {
-        return "scoped-svg-icon";
-      }
-    },
-  },
+  props: ["name"],
 };
 </script>
 
 <style lang="scss" scoped>
-.scoped-svg-icon {
+.svg-icon {
   width: 1em;
   height: 1em;
   vertical-align: -0.15em;

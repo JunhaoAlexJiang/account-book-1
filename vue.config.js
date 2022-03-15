@@ -19,6 +19,20 @@ module.exports = defineConfig({
       .options({
         symbolId: "[name]",
       })
+      .end()
+      .before("svg-sprite-loader")
+      .use("svgo-loader")
+      .loader("svgo-loader")
+      .options({
+        plugins: [
+          {
+            name: "removeAttrs",
+            params: {
+              attrs: "fill",
+            },
+          },
+        ],
+      })
       .end();
   },
 });

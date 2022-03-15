@@ -1,10 +1,5 @@
 <template>
-  <div>
-    <NavLayoutStyle>标签</NavLayoutStyle>
-    <svg>
-      <use xlink:href="#labels"></use>
-    </svg>
-  </div>
+  <NavLayoutStyle>标签</NavLayoutStyle>
 </template>
 
 <script lang="ts">

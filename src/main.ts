@@ -5,6 +5,7 @@ import router from "./router";
 import store from "./store";
 import Nav from "@/components/MainNav.vue";
 import NavLayout from "@/components/NavLayoutStyle.vue";
+import "./icons";
 
 Vue.config.productionTip = false;
 Vue.component("MainNav", Nav);

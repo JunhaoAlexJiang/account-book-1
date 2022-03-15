@@ -5,9 +5,9 @@
 </template>
 
 <script lang="ts">
-import NavLayoutStyle from "@/components/NavLayoutStyle.vue";
+import x from "@/assets/icon/svg/money.svg";
+console.log(x);
 export default {
-  components: { NavLayoutStyle },
   name: "MoneyView",
 };
 </script>

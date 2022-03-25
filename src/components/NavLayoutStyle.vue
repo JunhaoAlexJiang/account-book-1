@@ -1,6 +1,6 @@
 <template>
   <div class="nav">
-    <div class="content">
+    <div class="content" :class="classPrefix && `${classPrefix}-content`">
       <slot />
     </div>
     <MainNav />
@@ -9,6 +9,7 @@
 
 <script lang="ts">
 export default {
+  props: ["classPrefix"],
   name: "NavLayoutStyle",
 };
 </script>

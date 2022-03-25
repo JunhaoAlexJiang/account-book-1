@@ -19,7 +19,7 @@
     >
     </el-input>
     <el-button v-else class="button-new-tag" @click="showInput"
-      >+ New Tag</el-button
+      >+ 新增标签</el-button
     >
   </div>
 </template>
@@ -59,7 +59,6 @@ export default {
 
 <style lang="scss" scoped>
 .TagsContainer {
-  height: 40vh;
   overflow: auto;
 }
 .TagsContainer::-webkit-scrollbar {

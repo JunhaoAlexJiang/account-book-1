@@ -7,3 +7,5 @@ export default {
   name: "LabelView",
 };
 </script>
+
+<style lang="scss" scoped></style>

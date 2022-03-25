@@ -1,9 +1,13 @@
 <template>
-  <NavLayoutStyle> 记账 </NavLayoutStyle>
+  <NavLayoutStyle>
+    <tabs-module />
+  </NavLayoutStyle>
 </template>
 
 <script lang="ts">
+import TabsModule from "@/components/MoneyView/TabsModule.vue";
 export default {
+  components: { TabsModule },
   name: "MoneyView",
 };
 </script>

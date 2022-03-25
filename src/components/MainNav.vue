@@ -1,5 +1,5 @@
 <template>
-  <nav>
+  <div class="nav-style">
     <router-link to="/money" class="item" active-class="selected">
       <svg-icon name="money" class="icon" />记账
     </router-link>
@@ -9,7 +9,7 @@
     <router-link to="/statistics" class="item" active-class="selected">
       <svg-icon name="statistics" class="icon" />统计
     </router-link>
-  </nav>
+  </div>
 </template>
 
 <script>
@@ -20,7 +20,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-nav {
+.nav-style {
   display: flex;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
   flex-direction: row;

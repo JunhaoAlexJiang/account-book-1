@@ -5,7 +5,7 @@
       v-for="tag in dynamicTags"
       closable
       :disable-transitions="false"
-      :class="this.selectedTags.indexOf(tag) >= 0 ? 'selected' : ''"
+      :class="{ selected: selectedTags.indexOf(tag) >= 0 }"
       @close="handleClose(tag)"
       @click="toggle(tag)"
     >
@@ -58,8 +58,12 @@ export default {
     },
 
     toggle(tag) {
-      this.selectedTags.push(tag);
-      console.log(this.selectedTags.indexOf(tag) >= 0 ? "selected" : "");
+      const index = this.selectedTags.indexOf(tag);
+      if (index >= 0) {
+        this.selectedTags.splice(index, 1);
+      } else {
+        this.selectedTags.push(tag);
+      }
     },
   },
 };
@@ -73,6 +77,9 @@ export default {
   display: none;
 }
 .el-tag {
+  &.selected {
+    background: rgb(160, 197, 232);
+  }
   margin-left: 10px;
   margin-top: 10px;
 }

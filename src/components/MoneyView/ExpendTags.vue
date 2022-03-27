@@ -5,7 +5,9 @@
       v-for="tag in dynamicTags"
       closable
       :disable-transitions="false"
+      :class="{ selected: selectedTags.indexOf(tag) >= 0 }"
       @close="handleClose(tag)"
+      @click="toggle(tag)"
     >
       {{ tag }}
     </el-tag>
@@ -31,6 +33,7 @@ export default {
       dynamicTags: ["工资", "奖金", "副业"],
       inputVisible: false,
       inputValue: "",
+      selectedTags: [],
     };
   },
   methods: {
@@ -53,6 +56,15 @@ export default {
       this.inputVisible = false;
       this.inputValue = "";
     },
+
+    toggle(tag) {
+      const index = this.selectedTags.indexOf(tag);
+      if (index >= 0) {
+        this.selectedTags.splice(index, 1);
+      } else {
+        this.selectedTags.push(tag);
+      }
+    },
   },
 };
 </script>
@@ -65,6 +77,9 @@ export default {
   display: none;
 }
 .el-tag {
+  &.selected {
+    background: rgb(160, 197, 232);
+  }
   margin-left: 10px;
   margin-top: 10px;
 }

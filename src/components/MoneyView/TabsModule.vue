@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-tabs type="border-card" stretch="true">
+    <el-tabs type="border-card" :stretch="true">
       <el-tab-pane label="支出">
         <income-tags />
       </el-tab-pane>

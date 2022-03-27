@@ -5,17 +5,17 @@
       <el-button @click="inputContent">1</el-button>
       <el-button @click="inputContent">2</el-button>
       <el-button @click="inputContent">3</el-button>
-      <el-button>删除</el-button>
+      <el-button @click="remove">删除</el-button>
 
       <el-button @click="inputContent">4</el-button>
       <el-button @click="inputContent">5</el-button>
       <el-button @click="inputContent">6</el-button>
-      <el-button>清空</el-button>
+      <el-button @click="clear">清空</el-button>
 
       <el-button @click="inputContent">7</el-button>
       <el-button @click="inputContent">8</el-button>
       <el-button @click="inputContent">9</el-button>
-      <el-button class="ok">ok</el-button>
+      <el-button @click="ok" class="ok">ok</el-button>
 
       <el-button @click="inputContent">.</el-button>
       <el-button @click="inputContent">0</el-button>
@@ -50,6 +50,16 @@ export default class NumberPad extends Vue {
     }
 
     this.output += input;
+  }
+  remove() {
+    if (this.output.length === 1) {
+      this.output = "0";
+    } else {
+      this.output = this.output.slice(0, -1);
+    }
+  }
+  clear() {
+    this.output = "0";
   }
 }
 </script>

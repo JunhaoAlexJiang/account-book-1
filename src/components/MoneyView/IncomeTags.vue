@@ -5,7 +5,9 @@
       v-for="tag in dynamicTags"
       closable
       :disable-transitions="false"
+      :class="this.selectedTags.indexOf(tag) >= 0 ? 'selected' : ''"
       @close="handleClose(tag)"
+      @click="toggle(tag)"
     >
       {{ tag }}
     </el-tag>
@@ -31,6 +33,7 @@ export default {
       dynamicTags: ["衣", "食", "住", "行"],
       inputVisible: false,
       inputValue: "",
+      selectedTags: [],
     };
   },
   methods: {
@@ -52,6 +55,11 @@ export default {
       }
       this.inputVisible = false;
       this.inputValue = "";
+    },
+
+    toggle(tag) {
+      this.selectedTags.push(tag);
+      console.log(this.selectedTags.indexOf(tag) >= 0 ? "selected" : "");
     },
   },
 };

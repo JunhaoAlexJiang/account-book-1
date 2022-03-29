@@ -35,7 +35,6 @@ export default {
     },
     updateExpend(value) {
       this.$emit("update:expend", value);
-      console.log(value);
     },
   },
 };

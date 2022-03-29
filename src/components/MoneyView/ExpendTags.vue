@@ -57,6 +57,7 @@ export default {
       this.inputValue = "";
     },
 
+    //选中标签变色
     toggle(tag) {
       const index = this.selectedTags.indexOf(tag);
       if (index >= 0) {
@@ -64,6 +65,7 @@ export default {
       } else {
         this.selectedTags.push(tag);
       }
+      this.$emit("update", this.selectedTags);
     },
   },
 };
@@ -79,6 +81,7 @@ export default {
 .el-tag {
   &.selected {
     background: rgb(160, 197, 232);
+    color: white;
   }
   margin-left: 10px;
   margin-top: 10px;

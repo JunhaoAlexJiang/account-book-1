@@ -7,7 +7,6 @@
       class="tabs"
     />
     <number-pad @update:value="onUpdateCompute" />
-    {{ record }}
   </NavLayoutStyle>
 </template>
 

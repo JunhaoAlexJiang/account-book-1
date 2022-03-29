@@ -6,7 +6,8 @@
       @update:expend="onUpdateExpend"
       class="tabs"
     />
-    <number-pad />
+    <number-pad @update:value="onUpdateCompute" />
+    {{ record }}
   </NavLayoutStyle>
 </template>
 
@@ -17,15 +18,28 @@ import NumberPad from "@/components/MoneyView/NumberPad.vue";
 export default {
   components: { TabsModule, NumberPad },
   name: "MoneyView",
+  data() {
+    return {
+      record: {
+        tabs: "1",
+        income: [],
+        expend: [],
+        compute: 0,
+      },
+    };
+  },
   methods: {
-    onUpdateTabs(x) {
-      console.log(x);
+    onUpdateTabs(value) {
+      this.record.tabs = value;
     },
-    onUpdateIncome(x) {
-      console.log(x);
+    onUpdateIncome(value) {
+      this.record.income = value;
     },
-    onUpdateExpend(x) {
-      console.log(x);
+    onUpdateExpend(value) {
+      this.record.expend = value;
+    },
+    onUpdateCompute(value) {
+      this.record.compute = value;
     },
   },
 };

@@ -6,7 +6,7 @@
       @update:expend="onUpdateExpend"
       class="tabs"
     />
-    <number-pad @update:value="onUpdateCompute" />
+    <number-pad @update:value="onUpdateCompute" @submit="saveRecord" />
   </NavLayoutStyle>
 </template>
 
@@ -24,10 +24,13 @@ export default {
         income: [],
         expend: [],
         compute: 0,
+        createdAt: Date,
       },
+      recordList: JSON.parse(window.localStorage.getItem("recordList") || "[]"),
     };
   },
   methods: {
+    //各组件数据
     onUpdateTabs(value) {
       this.record.tabs = value;
     },
@@ -39,6 +42,21 @@ export default {
     },
     onUpdateCompute(value) {
       this.record.compute = value;
+    },
+    //数据保存
+    saveRecord() {
+      const record = JSON.parse(JSON.stringify(this.record));
+      this.recordList.push(record);
+      record.createdAt = new Date();
+    },
+  },
+  watch: {
+    //数据保存到localStorage
+    recordList: function () {
+      window.localStorage.setItem(
+        "recordList",
+        JSON.stringify(this.recordList)
+      );
     },
   },
 };

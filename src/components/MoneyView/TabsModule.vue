@@ -30,6 +30,7 @@ export default {
   },
 
   methods: {
+    //支出收入标签数据中转
     updateIncome(value) {
       this.$emit("update:income", value);
     },

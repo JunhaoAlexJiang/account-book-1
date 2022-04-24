@@ -26,7 +26,7 @@ export default {
         compute: 0,
         createdAt: Date,
       },
-      recordList: JSON.parse(window.localStorage.getItem("recordList") || "[]"),
+      // recordList: JSON.parse(window.localStorage.getItem("recordList") || "[]"),
     };
   },
   methods: {
@@ -43,20 +43,31 @@ export default {
     onUpdateCompute(value) {
       this.record.compute = value;
     },
-    //数据保存
-    saveRecord() {
-      const record = JSON.parse(JSON.stringify(this.record));
-      this.recordList.push(record);
-      record.createdAt = new Date();
+    created() {
+      this.$store.commit("fetchRecords");
     },
+    saveRecord() {
+      this.$store.commit("createRecord");
+    },
+    //数据保存
+    // saveRecord() {
+    //   const record = JSON.parse(JSON.stringify(this.record));
+    //   this.recordList.push(record);
+    //   record.createdAt = new Date();
+    // },
   },
-  watch: {
-    //数据保存到localStorage
-    recordList: function () {
-      window.localStorage.setItem(
-        "recordList",
-        JSON.stringify(this.recordList)
-      );
+  // watch: {
+  //   //数据保存到localStorage
+  //   recordList: function () {
+  //     window.localStorage.setItem(
+  //       "recordList",
+  //       JSON.stringify(this.recordList)
+  //     );
+  //   },
+  // },
+  computed: {
+    recordList() {
+      return this.$store.state.recordList;
     },
   },
 };

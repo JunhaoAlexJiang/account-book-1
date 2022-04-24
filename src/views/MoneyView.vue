@@ -47,7 +47,7 @@ export default {
       this.$store.commit("fetchRecords");
     },
     saveRecord() {
-      this.$store.commit("createRecord");
+      this.$store.commit("createRecord", this.record);
     },
     //数据保存
     // saveRecord() {

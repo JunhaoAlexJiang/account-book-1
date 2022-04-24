@@ -4,10 +4,10 @@ import Vuex from "vuex";
 Vue.use(Vuex);
 
 type RecordItem = {
-  tags: string[];
-  notes: string;
-  type: string;
-  amount: number; // 数据类型 object | string
+  tabs: string;
+  income: string[];
+  expend: string[];
+  compute: number; // 数据类型 object | string
   createdAt?: Date; // 类 / 构造函数
 };
 

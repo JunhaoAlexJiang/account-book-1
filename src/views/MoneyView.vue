@@ -42,12 +42,14 @@ export default {
     onUpdateCompute(value) {
       this.record.compute = value;
     },
-    created() {
-      this.$store.commit("fetchRecords");
-    },
+
     saveRecord() {
       this.$store.commit("createRecord", this.record);
     },
+  },
+
+  created() {
+    this.$store.commit("fetchRecords");
   },
 
   computed: {

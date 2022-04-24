@@ -68,6 +68,23 @@ export default {
       this.$emit("update", this.selectedTags);
     },
   },
+  watch: {
+    //新建tag保存到localStorage
+    dynamicTags: function tagData() {
+      window.localStorage.setItem(
+        "incomeTagList",
+        JSON.stringify(this.dynamicTags)
+      );
+    },
+  },
+
+  //渲染保存到localStorage的新建tag
+  created() {
+    const incomeTagList = window.localStorage.getItem("incomeTagList");
+    if (incomeTagList) {
+      this.dynamicTags = JSON.parse(incomeTagList);
+    }
+  },
 };
 </script>
 

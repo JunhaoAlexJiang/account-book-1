@@ -10,10 +10,14 @@ type RecordItem = {
   compute: number; // 数据类型 object | string
   createdAt?: Date; // 类 / 构造函数
 };
+type TagItem = {
+  tags: string[];
+};
 
 const store = new Vuex.Store({
   state: {
     recordList: [] as RecordItem[],
+    tagList: [] as TagItem[],
   },
   mutations: {
     fetchRecords(state) {
